@@ -3,13 +3,14 @@ import mongoose from 'mongoose';
 import cors from "cors"
 import morgan from 'morgan';
 import userRouter from "./routes/user.js"
-
+import tourRouter from "./routes/user.js"
 const app= express();
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
 app.use("/user",userRouter); //
+app.use("/tour",tourRouter);
  const MONGODB_URL="mongodb+srv://madhukarschinthakunta:madhukar@cluster0.8huhmel.mongodb.net/?retryWrites=true&w=majority"
  
  //mongodb+srv://madhukarschinthakunta:madhukar@cluster0.8huhmel.mongodb.net/rour_db?retryWrites=true&w=majority
